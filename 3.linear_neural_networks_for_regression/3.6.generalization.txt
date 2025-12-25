@@ -1,0 +1,7 @@
+- how can we be sure we discovered a general pattern and not simply memorized our data?
+- overfitting: fiting closer to our training data than the underlying distribution
+- regularization: combatting overfitting
+
+3.6.1. training error and generalization error
+- standard supervised learning: training data and test data are drawn independently from identitical distributions
+- 
