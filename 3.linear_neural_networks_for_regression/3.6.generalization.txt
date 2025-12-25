@@ -10,6 +10,9 @@ summary
 - more data almost always leads to better generalization
 - this is all predicated on the IID assumption 
 
+key term:
+IID: data points are unrelated to each other (indepedent), and drawn from the same underlying probability distribution
+
 3.6.1. training error and generalization error
 - standard supervised learning: training data and test data are drawn independently from identitical distributions
 - why should we believe predictions on test data from distr P(X, Y) should tell us how to make predictions on 
