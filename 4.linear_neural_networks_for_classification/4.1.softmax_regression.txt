@@ -1,1 +1,19 @@
 intro
+- regression answers "how much/many" questions
+- there is a lot more to estimation than minimizing least squared errors
+- there is a lot more to supervised learning than regression
+- this section will focus on classication problems ("which category?")
+
+examples
+- does this email belong to the spam folder or the inbox?
+- doe sthis image depict a donkey, a dog, a cat, or a rooster?
+
+4.1.1. classification
+- each input is a 2 x 2 grayscale image, so x1, x2, x3, x4 pixel values
+- is it a cat, chicken or dog?
+- can organize the labels as {1, 2, 3}
+- one-hot encoding (a vector with as many components as we have categories)
+- (1, 0, 0) is cat, (0, 1, 0) is chicken, and (0, 0, 1) is dog
+
+4.1.1.1. linear model
+- 
