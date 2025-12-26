@@ -16,4 +16,46 @@ examples
 - (1, 0, 0) is cat, (0, 1, 0) is chicken, and (0, 0, 1) is dog
 
 4.1.1.1. linear model
-- 
+- we need as many affine functions as we have outputs
+- this yields 
+omega1 = x1w11 + x2w12 + x3w12 + x4w14 + b1,
+omega2 = x1w21 + ...,
+
+- so there are 4 nodes in the input layer that then map to the 3 nodes in the output layer
+- this can be expressed by o = Wx + b
+- note all weights are 3 x 4 matrix and biases in R3 vector
+
+4.1.1.2. the softmax
+- we need to squish the outputs 
+- the softmax function is as follows
+
+exp(o_i)/sum of exp(o_j) for all o_j
+
+- so normalize each o_i output by raising e to it and dividing by sum of e to all o_j
+- softmax preserves the ordering among its arguments so
+
+argmax y hat over j = argmax o over o_j
+
+- so the biggest output has the biggest softmax when normalized
+
+4.1.1.3. vectorization
+- improve computational efficiency by vectorizing calculations in minibatches of data
+- assume we are given minibatch X (n x d) with n examples of dimension data
+- assume q categories in the output
+- the weights W (d x q)
+- bias satsifies b (1 x q)
+
+O = XW + b,
+hat(Y) = softmax(O)
+
+- recall the b broadcast across the minibatch so dim(O) = n x q
+- in this case, there are n examples so O has n output layers
+- afterwards, we softmax across each layer
+- since each row in X represents a data example, the softmax operation itself can be computed rowwise
+
+4.1.2. loss function
+- to optimize the accuracy of this mapping, rely on maximum likelihood estimation
+
+4.1.2.1. log-likelihood
+- example: assume that for a dataset with features X and labels Y are represented by one0hot encoding label vectors
+- cross-entropy loss
